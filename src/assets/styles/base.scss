@@ -1,0 +1,28 @@
+:root {
+  --z-success: #67C23A;
+  --z-warning: #E6A23C;
+  --z-danger: #F56C6C;
+  --z-info: #909399;
+  
+  --z-basic-white: #FFFFFF;
+  --z-basic-black: #000000;
+
+  --z-primary-text: #303133;
+  --z-placeholder-text: #A8ABB2;
+
+  --z-darker-border: #CDD0D6;
+  --z-dase-border: #DCDFE6;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

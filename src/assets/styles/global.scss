@@ -1,0 +1,123 @@
+/* 自定义 */
+.flex {
+  display: flex;
+}
+
+.flex-y {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.flex-end {
+  justify-content: end;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.box-shadow {
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px !important;
+}
+
+// 字体大小
+@for $i from 10 through 50 {
+  .font-#{$i} {
+      font-size: #{$i}px !important;
+  }
+}
+
+// 超出几行变省略号
+@for $i from 1 through 5 {
+  .line-#{$i} {
+    @if $i == 1 {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    } @else {
+      display: -webkit-box !important;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-break: break-all;
+      -webkit-line-clamp: $i;
+      -webkit-box-orient: vertical !important;
+    }
+  }
+}
+
+// 外边距、内边距全局样式
+@for $i from 1 through 58 {
+  .mt-#{$i} {
+      margin-top: #{$i}px !important;
+  }
+  .mr-#{$i} {
+      margin-right: #{$i}px !important;
+  }
+  .mb-#{$i} {
+      margin-bottom: #{$i}px !important;
+  }
+  .ml-#{$i} {
+      margin-left: #{$i}px !important;
+  }
+  .pt-#{$i} {
+      padding-top: #{$i}px !important;
+  }
+  .pr-#{$i} {
+      padding-right: #{$i}px !important;
+  }
+  .pb-#{$i} {
+      padding-bottom: #{$i}px !important;
+  }
+  .pl-#{$i} {
+      padding-left: #{$i}px !important;
+  }
+}
+
+// 鼠标经过上移阴影动画
+@mixin hoverShadow() {
+  transition: all 0.5s;
+  &:hover {
+    transform: translate3d(0, -3px, 0);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  }
+}
+
+// 滚动条
+::-webkit-scrollbar {
+  // x方向
+  width: 6px;
+  // y方向
+  height: 6px;
+  background-color: #ffffff;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 0 0 6px rgba(82, 82, 82, 0.2);
+  background-color: #ffffff;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  background-color: #d4d4d4;
+}
